@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+    "ms-python.python",
+    {% if python_linter == 'ruff' -%}
+    "charliermarsh.ruff",
+    "emeraldwalk.runonsave",
+    {% endif %}
+    "bungcip.better-toml",
+    "editorconfig.editorconfig",
+    "matangover.mypy",
+    "runarsf.platform-settings"
+  ]
+}
