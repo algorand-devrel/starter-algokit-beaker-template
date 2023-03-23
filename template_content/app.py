@@ -4,7 +4,7 @@ from pyteal import *
 app = Application("HelloWorld")
 
 
-@app.external(read_only=True)
+@app.external
 def hello(name: abi.String, *, output: abi.String) -> Expr:
     return output.set(Concat(Bytes("Hello, "), name.get()))
 
