@@ -8,7 +8,7 @@ class Methods:
     def hello(name: abi.String, *, output: abi.String) -> Expr:
         return output.set(Concat(Bytes("Hello, "), name.get()))
 
-    @app.delete(authorize=Authorize.only(Global.creator_address()))
+    @app.delete(bare=True, authorize=Authorize.only(Global.creator_address()))
     def delete() -> Expr:
         return Approve()
 
