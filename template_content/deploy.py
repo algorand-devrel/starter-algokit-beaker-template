@@ -1,7 +1,12 @@
-from app import app, hello
-from beaker import sandbox, client
+from pathlib import Path
 
-app.build().export("./artifacts")
+from beaker import client, sandbox
+
+from app import app, hello
+from utils import build
+
+root_path = Path(__file__).parent
+build(root_path / "artifacts", app)
 
 accounts = sandbox.kmd.get_accounts()
 sender = accounts[0]
